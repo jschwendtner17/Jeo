@@ -32,9 +32,10 @@ namespace Jeo
             arrB[arrB.GetLength(0) - 1, 0] = 0;
             arrB[arrB.GetLength(0) - 1, 1] = 0;
 
-            arrB[0, 0] = arrC[0, 0];
-            arrB[0, 1] = arrC[0, 1];
-            arrB[0, 2] = arrC[0, 2];
+            for (int i = 0; i < arrC.GetLength(1); i++)
+            {
+                arrB[0, i] = arrC[0, i];
+            }
 
             arrA[1, 0] = (Math.Round((arrC[1, 0] / arrB[0, 0]) * 100) / 100);
             arrB[1, 1] = (Math.Round((arrC[1, 1] - arrA[1, 0] * arrB[0, 1]) * 100) / 100);
