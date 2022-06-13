@@ -13,17 +13,17 @@ namespace Jeo
 
         public void calcInputs(double[,] arrC)
         {
-            arrB[0, 0] = arrC[0, 0];
-            arrB[0, 1] = arrC[0, 1];
-            arrB[0, 2] = arrC[0, 2];
+            arrB[0, 0] = (Math.Round(arrC[0, 0] * 100) / 100);
+            arrB[0, 1] = (Math.Round(arrC[0, 1] * 100) / 100);
+            arrB[0, 2] = (Math.Round(arrC[0, 2] * 100) / 100);
 
-            arrA[1, 0] = arrC[1, 0] / arrB[0, 0];
-            arrB[1, 1] = arrC[1, 1] - arrA[1, 0] * arrB[0, 1];
-            arrB[1, 2] = arrC[1, 2] - arrA[1, 0] * arrB[0, 2];
+            arrA[1, 0] = (Math.Round((arrC[1, 0] / arrB[0, 0]) * 100) / 100);
+            arrB[1, 1] = (Math.Round((arrC[1, 1] - arrA[1, 0] * arrB[0, 1]) * 100) / 100);
+            arrB[1, 2] = (Math.Round((arrC[1, 2] - arrA[1, 0] * arrB[0, 2]) * 100) / 100);
 
-            arrA[2, 0] = arrC[2, 0] / arrB[0, 0];
-            arrA[2, 1] = (arrC[2, 1] - arrA[2, 0] * arrB[0, 1]) / arrB[1, 1];
-            arrB[2, 2] = arrC[2, 2] - arrA[2, 0] * arrB[0, 2] - arrA[2, 1] * arrB[1, 2];
+            arrA[2, 0] = (Math.Round((arrC[2, 0] / arrB[0, 0]) * 100) / 100);
+            arrA[2, 1] = (Math.Round((arrC[2, 1] - arrA[2, 0] * arrB[0, 1]) / arrB[1, 1] * 100) / 100);
+            arrB[2, 2] = (Math.Round((arrC[2, 2] - arrA[2, 0] * arrB[0, 2] - arrA[2, 1] * arrB[1, 2]) * 100) / 100);
         }
 
         public void printArr(double[,] arr)
