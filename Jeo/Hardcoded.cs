@@ -31,6 +31,16 @@ namespace Jeo
             }
 
             //bottom left corner
+            int y = 1;
+            for (int i = 1; i < arrC.GetLength(0); i++)
+            {
+                for (int j = 0; j < y; j++)
+                {
+                    arrA[i, j] = 0;
+                }
+                y += 1;
+            }
+
             arrB[arrB.GetLength(0) - 2, 0] = 0;
             arrB[arrB.GetLength(0) - 1, 0] = 0;
             arrB[arrB.GetLength(0) - 1, 1] = 0;
