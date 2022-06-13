@@ -2,14 +2,13 @@
 
 Hardcoded h = new Hardcoded();
 
-const int MATRIX_ROWS = 3;
-const int MATRIX_COLUMNS = 3;
+const int MATRIX_ROWS_COLUMNS = 3;
 
-double[,] arrC = new double[MATRIX_ROWS, MATRIX_COLUMNS];
+double[,] arrC = new double[MATRIX_ROWS_COLUMNS, MATRIX_ROWS_COLUMNS];
 
-for (int i = 0; i < MATRIX_ROWS; i++)
+for (int i = 0; i < MATRIX_ROWS_COLUMNS; i++)
 {
-    for (int j = 0; j < MATRIX_COLUMNS; j++)
+    for (int j = 0; j < MATRIX_ROWS_COLUMNS; j++)
     {
         double input;
         Console.Write("Enter value for ({0},{1}): ", i, j);

@@ -13,24 +13,24 @@ namespace Jeo
 
         public void calcInputs(double[,] arrC)
         {
-            for(int i = 0; i<arrC.GetLength(0);i++)
+            for (int i = 0; i < arrC.GetLength(0); i++)
             {
-                for(int j = 0; j<arrC.GetLength(1);j++)
+                for (int j = 0; j < arrC.GetLength(1); j++)
                 {
-                    if(i == j)
+                    if (i == j)
                     {
                         arrA[i, j] = 1;
                     }
                 }
             }
 
-            arrA[0, 1] = 0;
-            arrA[0, 2] = 0;
-            arrA[1, 2] = 0;
+            arrA[0, arrA.GetLength(1) - 2] = 0;
+            arrA[0, arrA.GetLength(1) - 1] = 0;
+            arrA[1, arrA.GetLength(1) - 1] = 0;
 
-            arrB[1, 0] = 0;
-            arrB[2, 0] = 0;
-            arrB[2, 1] = 0;
+            arrB[arrB.GetLength(0) - 2, 0] = 0;
+            arrB[arrB.GetLength(0) - 1, 0] = 0;
+            arrB[arrB.GetLength(0) - 1, 1] = 0;
 
             arrB[0, 0] = arrC[0, 0];
             arrB[0, 1] = arrC[0, 1];
