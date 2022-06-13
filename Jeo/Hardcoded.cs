@@ -13,9 +13,21 @@ namespace Jeo
 
         public void calcInputs(double[,] arrC)
         {
-            arrB[0, 0] = (Math.Round(arrC[0, 0] * 100) / 100);
-            arrB[0, 1] = (Math.Round(arrC[0, 1] * 100) / 100);
-            arrB[0, 2] = (Math.Round(arrC[0, 2] * 100) / 100);
+            arrA[0, 0] = 1;
+            arrA[1, 1] = 1;
+            arrA[2, 2] = 1;
+
+            arrA[0, 1] = 0;
+            arrA[0, 2] = 0;
+            arrA[1, 2] = 0;
+
+            arrB[1, 0] = 0;
+            arrB[2, 0] = 0;
+            arrB[2, 1] = 0;
+
+            arrB[0, 0] = arrC[0, 0];
+            arrB[0, 1] = arrC[0, 1];
+            arrB[0, 2] = arrC[0, 2];
 
             arrA[1, 0] = (Math.Round((arrC[1, 0] / arrB[0, 0]) * 100) / 100);
             arrB[1, 1] = (Math.Round((arrC[1, 1] - arrA[1, 0] * arrB[0, 1]) * 100) / 100);
