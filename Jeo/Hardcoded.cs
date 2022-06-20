@@ -56,14 +56,19 @@ namespace Jeo
             }
             Console.WriteLine();
 
+            //B first row
             for (int i = 0; i < arrC.GetLength(1); i++)
             {
                 arrB[0, i] = arrC[0, i];
             }
 
+            //A second row
             arrA[1, 0] = (Math.Round((arrC[1, 0] / arrB[0, 0]) * 100) / 100);
-            arrB[1, 1] = (Math.Round((arrC[1, 1] - arrA[1, 0] * arrB[0, 1]) * 100) / 100);
-            arrB[1, 2] = (Math.Round((arrC[1, 2] - arrA[1, 0] * arrB[0, 2]) * 100) / 100);
+
+            for(int i = 1; i < arrC.GetLength(0); i++)
+            {
+                arrB[1, i] = (Math.Round((arrC[1, i] - arrA[1, 0] * arrB[0, i]) * 100) / 100);
+            }
 
             arrA[2, 0] = (Math.Round((arrC[2, 0] / arrB[0, 0]) * 100) / 100);
             arrA[2, 1] = (Math.Round((arrC[2, 1] - arrA[2, 0] * arrB[0, 1]) / arrB[1, 1] * 100) / 100);
