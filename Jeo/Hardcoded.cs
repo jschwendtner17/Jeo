@@ -71,13 +71,24 @@ namespace Jeo
                 arrB[1, i] = (Math.Round((arrC[1, i] - arrA[1, 0] * arrB[0, i]) * 100) / 100);
             }
 
-            //A 1st and 2nd column, B third row
+            //A first and second column, B third row
             for (int i = 2; i < arrC.GetLength(0); i++)
             {
+                //A first column
                 arrA[i, 0] = (Math.Round((arrC[i, 0] / arrB[0, 0]) * 100) / 100);
+
+                //A second column
                 arrA[i, 1] = (Math.Round((arrC[i, 1] - arrA[i, 0] * arrB[0, 1]) / arrB[1, 1] * 100) / 100);
+
+                //B third row
                 arrB[2, i] = (Math.Round((arrC[2, i] - arrA[i, 0] * arrB[0, i] - arrA[i, 1] * arrB[1, i]) * 100) / 100);
             }
+
+            //TODO bei 4x4: A => arrA[3,2]; B => arrB[3,3]
+            //TODO bei 5x5: A => arrA[3,2], arrA[4,2], arrA[4,3]; B => arrB[3,3], arrB[3,4], arrB[4,4]
+
+            //arrA[3, 2] = (Math.Round((arrC[3, 2] - arrA[3, 0] * arrB[0, 2] - arrA[3, 1] * arrB[1, 2]) / arrB[2, 2] * 100) / 100);
+            //arrB[3, 3] = ((Math.Round(arrC[3, 3] - arrA[3, 0] * arrB[0, 3] - arrA[3, 1] * arrB[1, 3] - arrA[3, 2] * arrB[2, 3]) * 100) / 100);
         }
 
         public void printArr(double[,] arr)
