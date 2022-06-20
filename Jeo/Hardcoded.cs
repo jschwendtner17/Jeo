@@ -8,8 +8,14 @@ namespace Jeo
 {
     public class Hardcoded
     {
-        public double[,] arrA { get; set; } = new double[4, 4];
-        public double[,] arrB { get; set; } = new double[4, 4];
+        public double[,] arrA { get; set; }
+        public double[,] arrB { get; set; }
+        public Hardcoded(int x)
+        {
+            arrA = new double[x, x];
+            arrB = new double[x, x];
+        }
+        
 
         public void calcInputs(double[,] arrC)
         {

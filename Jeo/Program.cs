@@ -1,6 +1,9 @@
 ﻿using Jeo;
 
-Hardcoded h = new Hardcoded();
+//Console.WriteLine("X eingebn");
+//int x = Int32.Parse(Console.ReadLine());
+
+Hardcoded h = new Hardcoded(4);
 
 //const int MATRIX_ROWS_COLUMNS = 3;
 
