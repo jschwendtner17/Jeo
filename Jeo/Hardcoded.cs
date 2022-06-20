@@ -15,11 +15,11 @@ namespace Jeo
             arrA = new double[x, x];
             arrB = new double[x, x];
         }
-        
+
 
         public void calcInputs(double[,] arrC)
         {
-            //diagonal
+            //A diagonal
             Console.WriteLine("Diagonal");
             for (int i = 0; i < arrC.GetLength(0); i++)
             {
@@ -28,21 +28,21 @@ namespace Jeo
             }
             Console.WriteLine();
 
-            //top right corner
+            //A top right corner
             Console.WriteLine("Top Right Corner");
             int x = 1;
             for (int i = 0; i < arrC.GetLength(0); i++)
             {
-                for(int j = x; j < arrC.GetLength(1); j++)
+                for (int j = x; j < arrC.GetLength(1); j++)
                 {
-                    arrA[i,j] = 0;
+                    arrA[i, j] = 0;
                     Console.WriteLine($"arrA[{i},{j}] = 0");
                 }
                 x += 1;
             }
             Console.WriteLine();
 
-            //bottom left corner
+            //B bottom left corner
             Console.WriteLine("Bottom left corner");
             int y = 1;
             for (int i = 1; i < arrC.GetLength(0); i++)
@@ -65,14 +65,19 @@ namespace Jeo
             //A second row
             arrA[1, 0] = (Math.Round((arrC[1, 0] / arrB[0, 0]) * 100) / 100);
 
-            for(int i = 1; i < arrC.GetLength(0); i++)
+            //B second row
+            for (int i = 1; i < arrC.GetLength(0); i++)
             {
                 arrB[1, i] = (Math.Round((arrC[1, i] - arrA[1, 0] * arrB[0, i]) * 100) / 100);
             }
 
-            arrA[2, 0] = (Math.Round((arrC[2, 0] / arrB[0, 0]) * 100) / 100);
-            arrA[2, 1] = (Math.Round((arrC[2, 1] - arrA[2, 0] * arrB[0, 1]) / arrB[1, 1] * 100) / 100);
-            arrB[2, 2] = (Math.Round((arrC[2, 2] - arrA[2, 0] * arrB[0, 2] - arrA[2, 1] * arrB[1, 2]) * 100) / 100);
+            //A 1st and 2nd column, B third row
+            for (int i = 2; i < arrC.GetLength(0); i++)
+            {
+                arrA[i, 0] = (Math.Round((arrC[i, 0] / arrB[0, 0]) * 100) / 100);
+                arrA[i, 1] = (Math.Round((arrC[i, 1] - arrA[i, 0] * arrB[0, 1]) / arrB[1, 1] * 100) / 100);
+                arrB[2, i] = (Math.Round((arrC[2, i] - arrA[i, 0] * arrB[0, i] - arrA[i, 1] * arrB[1, i]) * 100) / 100);
+            }
         }
 
         public void printArr(double[,] arr)
