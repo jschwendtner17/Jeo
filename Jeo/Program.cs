@@ -20,7 +20,7 @@ Hardcoded h = new Hardcoded();
 //    }
 //}
 
-double[,] arrC = new double[,] { { 2, 7, 1 }, { 3, -2, 8 }, { 1, 5, 3 } };
+double[,] arrC = new double[,] { { 2, 7, 1, 2 }, { 3, -2, 8, 2 }, { 1, 5, 3, 2 }, { 2, 2, 2, 2 } };
 
 Console.WriteLine("C");
 Console.WriteLine("--------------------");

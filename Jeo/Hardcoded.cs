@@ -8,38 +8,47 @@ namespace Jeo
 {
     public class Hardcoded
     {
-        public double[,] arrA { get; set; } = new double[3, 3];
-        public double[,] arrB { get; set; } = new double[3, 3];
+        public double[,] arrA { get; set; } = new double[4, 4];
+        public double[,] arrB { get; set; } = new double[4, 4];
 
         public void calcInputs(double[,] arrC)
         {
             //diagonal
+            Console.WriteLine("Diagonal");
             for (int i = 0; i < arrC.GetLength(0); i++)
             {
                 arrA[i, i] = 1;
+                Console.WriteLine($"arrA[{i},{i}] = 1");
             }
+            Console.WriteLine();
 
             //top right corner
+            Console.WriteLine("Top Right Corner");
             int x = 1;
             for (int i = 0; i < arrC.GetLength(0); i++)
             {
                 for(int j = x; j < arrC.GetLength(1); j++)
                 {
                     arrA[i,j] = 0;
+                    Console.WriteLine($"arrA[{i},{j}] = 0");
                 }
                 x += 1;
             }
+            Console.WriteLine();
 
             //bottom left corner
+            Console.WriteLine("Bottom left corner");
             int y = 1;
             for (int i = 1; i < arrC.GetLength(0); i++)
             {
                 for (int j = 0; j < y; j++)
                 {
-                    arrA[i, j] = 0;
+                    arrB[i, j] = 0;
+                    Console.WriteLine($"arrB[{i},{j}] = 0");
                 }
                 y += 1;
             }
+            Console.WriteLine();
 
             for (int i = 0; i < arrC.GetLength(1); i++)
             {
