@@ -1,11 +1,10 @@
 ﻿using Jeo;
 
 //Console.WriteLine("X eingebn");
-//int x = Int32.Parse(Console.ReadLine());
+//int MATRIX_ROWS_COLUMNS = Int32.Parse(Console.ReadLine());
 
+//Hardcoded h = new Hardcoded(MATRIX_ROWS_COLUMNS);
 Hardcoded h = new Hardcoded(4);
-
-//const int MATRIX_ROWS_COLUMNS = 3;
 
 //double[,] arrC = new double[MATRIX_ROWS_COLUMNS, MATRIX_ROWS_COLUMNS];
 
