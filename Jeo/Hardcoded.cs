@@ -41,10 +41,6 @@ namespace Jeo
                 y += 1;
             }
 
-            arrB[arrB.GetLength(0) - 2, 0] = 0;
-            arrB[arrB.GetLength(0) - 1, 0] = 0;
-            arrB[arrB.GetLength(0) - 1, 1] = 0;
-
             for (int i = 0; i < arrC.GetLength(1); i++)
             {
                 arrB[0, i] = arrC[0, i];
